@@ -1,0 +1,55 @@
+{
+  "name": "uapi-payment-components",
+  "version": "0.1.0",
+  "description": "React UAPI components for product cards and payment modals.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "shuakami",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuakami/uapi-payment-components.git"
+  },
+  "files": [
+    "dist",
+    "src/styles/payment-modal.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles/payment-modal.css": "./src/styles/payment-modal.css"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external react-dom",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "qrcode": "^1.5.4",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "~5.8.2"
+  }
+}
